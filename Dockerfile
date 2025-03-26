@@ -5,7 +5,7 @@ ENV PYTHONUNBUFFERED=1
 
 FROM base AS python-deps
 RUN pip install pipenv
-RUN apt-get update && apt-get install -y --no-install-recommends build-essential gcc
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential libpq-dev gcc
 
 COPY Pipfile Pipfile.lock ./
 COPY ./api /api
